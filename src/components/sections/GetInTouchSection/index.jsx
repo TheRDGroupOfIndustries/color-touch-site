@@ -1,90 +1,119 @@
 import Image from "next/image";
-import {MdOutlineLocationOn, MdOutlineMail} from "react-icons/md";
-import {IoCallOutline} from "react-icons/io5";
-import {Button} from "@/components/ui/button";
+import { MdOutlineLocationOn, MdOutlineMail } from "react-icons/md";
+import { IoCallOutline } from "react-icons/io5";
+import { Button } from "@/components/ui/button";
 
 const GetInTouchSection = () => {
     const touchData = [
         {
             title: "Visit Our Office",
             description: "123 Creative Street, Design District, NY 10001",
-            icon: <MdOutlineLocationOn/>
+            icon: <MdOutlineLocationOn />
         },
         {
             title: "Call Us",
             description: "+1(555) 123-4567",
-            icon: <IoCallOutline/>
+            icon: <IoCallOutline />
         },
         {
             title: "Email Us",
             description: "hello@colortouch.agency",
-            icon: <MdOutlineMail/>
+            icon: <MdOutlineMail />
         },
-    ]
+    ];
+
     return (
-        <div className="bg-white py-20">
-            <div className="text-center">
-                <h1 className="text-5xl font-bold">
+        <div className="bg-white py-12 md:py-20">
+            <div className="text-center px-4 sm:px-6 lg:px-8">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
                     Get In <span className="animate-gradient">Touch</span>
                 </h1>
                 <div className="w-24 h-1 animate-border mx-auto my-4"></div>
-                <p className="text-xl my-4">
+                <p className="text-base sm:text-lg lg:text-xl my-4 max-w-4xl mx-auto">
                     Ready to add color to your digital presence? Let's discuss
-                    how we can help <br/>
-                    your brand shine in the digital landscape.
+                    how we can help your brand shine in the digital landscape.
+                    <span className="hidden lg:inline">
+                        <br />
+                    </span>
                 </p>
             </div>
 
-            <div className="flex gap-20 mt-16 px-28">
-                <div className="w-1/2 h-96 space-y-4">
-                    <h1 className="text-3xl font-bold">Let's Start Something
-                        Amazing</h1>
-                    <div className="space-y-3 mt-6">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-20 mt-8 lg:mt-16 px-4 sm:px-6 lg:px-8 xl:px-28">
+                {/* Contact Information */}
+                <div className="w-full lg:w-1/2 h-auto space-y-4">
+                    <h1 className="text-2xl sm:text-3xl font-bold">Let's Start Something Amazing</h1>
+                    <div className="space-y-4 sm:space-y-3 mt-6">
                         {touchData.map((data, i) => (
-                            <div key={i} className="flex items-center gap-3">
-                                <div
-                                    className="h-12 w-12 p-3 text-2xl text-white rounded-full animate-gradient-background">{data.icon}</div>
-                                <div className=" font-medium">
-                                    <p>{data.title}</p>
-                                    <p className="text-sm text-gray-500">{data.description}</p>
+                            <div key={i} className="flex items-center gap-3 sm:gap-4">
+                                <div className="h-10 w-10 sm:h-12 sm:w-12 p-2 sm:p-3 text-xl sm:text-2xl text-white rounded-full animate-gradient-background flex-shrink-0 flex items-center justify-center">
+                                    {data.icon}
+                                </div>
+                                <div className="font-medium">
+                                    <p className="text-base sm:text-lg">{data.title}</p>
+                                    <p className="text-sm text-gray-500 break-words">{data.description}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                <form
-                    className="w-1/2 h-96 space-y-4 rounded-lg">
-                    <div className="flex ">
-                        <div className="w-1/2 ">
-                            <label className="block">First Name</label>
-                            <input type="text" className=" px-8 py-2 "/>
-                        </div>
-                        <div className="w-1/2 ">
-                            <label className="block">Last Name</label>
-                            <input type="text" className=" px-8 py-2 "/>
-                        </div>
+                {/* Contact Form */}
+                <form className="w-full lg:w-1/2 h-auto space-y-4 sm:space-y-6 rounded-lg">
+                    {/* Name Fields */}
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-3">
+                        <div className="w-full sm:w-1/2">
+                            <label className="block text-sm sm:text-base font-medium mb-2">First Name</label>
+                            <input
+                                type="text"
+                                className="w-full px-4 sm:px-6 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
 
+                            />
+                        </div>
+                        <div className="w-full sm:w-1/2">
+                            <label className="block text-sm sm:text-base font-medium mb-2">Last Name</label>
+                            <input
+                                type="text"
+                                className="w-full px-4 sm:px-6 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+
+                            />
+                        </div>
                     </div>
-                    <div className="w-full ">
-                        <label className="block">Email Address</label>
-                        <input type="text"
-                               className=" px-8 py-2 w-full  "/>
+
+                    {/* Email Field */}
+                    <div className="w-full">
+                        <label className="block text-sm sm:text-base font-medium mb-2">Email Address</label>
+                        <input
+                            type="email"
+                            className="w-full px-4 sm:px-6 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        />
                     </div>
-                    <div className="w-full ">
-                        <label className="block">Company</label>
-                        <input type="text"
-                               className=" w-full  px-8 py-2 "/>
+
+                    {/* Company Field */}
+                    <div className="w-full">
+                        <label className="block text-sm sm:text-base font-medium mb-2">Company</label>
+                        <input
+                            type="text"
+                            className="w-full px-4 sm:px-6 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        />
                     </div>
-                    <div className="w-full ">
-                        <label className="block">Message</label>
+
+                    {/* Message Field */}
+                    <div className="w-full">
+                        <label className="block text-sm sm:text-base font-medium mb-2">Message</label>
                         <textarea
-                            className=" px-8  w-full py-2 h-20 "></textarea>
+                            className="w-full px-4 sm:px-6 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                            rows="4"
+                        ></textarea>
                     </div>
-                    <Button className="w-full  animate-gradient-background">Send Message</Button>
+
+                    {/* Submit Button */}
+                    <Button className="w-full text-base sm:text-lg animate-gradient-background hover:scale-105 transition-transform">
+                        Send Message
+                    </Button>
                 </form>
             </div>
-        </div>);
+        </div>
+    );
 };
 
-export default GetInTouchSection
+export default GetInTouchSection;

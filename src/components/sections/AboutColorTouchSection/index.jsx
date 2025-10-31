@@ -2,23 +2,27 @@ import Image from "next/image";
 
 const AboutColorTouchSection = () => {
     return (
-        <div className="bg-white py-20">
-            <div className="text-center">
-                <h1 className="text-5xl font-bold">
+        <div className="bg-white py-12 md:py-20">
+            <div className="text-center px-4 sm:px-6 lg:px-8">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
                     About <span className="animate-gradient">ColorTouch</span>
                 </h1>
                 <div className="w-24 h-1 animate-border mx-auto my-4"></div>
-                <p className="text-xl my-4">
+                <p className="text-base sm:text-lg lg:text-xl my-4 max-w-4xl mx-auto">
                     We're a passionate team of digital artists and marketing
-                    strategists who <br/> believe every
-                    brand deserves to shine in the digital landscape.
+                    strategists who{" "}
+                    <span className="hidden sm:inline">
+                        <br />
+                    </span>
+                    believe every brand deserves to shine in the digital landscape.
                 </p>
             </div>
 
-            <div className="flex gap-20 mt-16 px-28">
-                <div className="w-1/2 h-96 space-y-4">
-                    <h1 className="text-3xl font-bold">Our Creative Journey</h1>
-                    <p className="text-xl">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 mt-8 lg:mt-16 px-4 sm:px-6 lg:px-28">
+                {/* Text Content */}
+                <div className="w-full lg:w-1/2 h-auto lg:h-96 space-y-4">
+                    <h1 className="text-2xl sm:text-3xl font-bold">Our Creative Journey</h1>
+                    <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
                         Founded in 2020, ColorTouch emerged from a simple
                         belief: digital marketing should be as
                         vibrant and dynamic as the brands we represent. We've
@@ -35,16 +39,23 @@ const AboutColorTouchSection = () => {
                         ].map((text, i) => (
                             <div key={i} className="flex items-center gap-3">
                                 <span
-                                    className="h-6 w-6 rounded-full animate-gradient-background"></span>
-                                <p className="text-lg font-medium">{text}</p>
+                                    className="h-5 w-5 sm:h-6 sm:w-6 rounded-full animate-gradient-background flex-shrink-0"></span>
+                                <p className="text-base sm:text-lg font-medium">{text}</p>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                <Image className="w-1/2 h-96"
-                       src="/images/office-img.jpg" height="100" width="100"
-                       alt="office img"/>
+                {/* Image */}
+                <div className="w-full lg:w-1/2 h-64 sm:h-80 lg:h-96 relative">
+                    <Image
+                        className="rounded-lg object-cover"
+                        src="/images/office-img.jpg"
+                        fill
+                        alt="office img"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                </div>
             </div>
         </div>
     );

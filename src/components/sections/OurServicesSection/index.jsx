@@ -1,66 +1,73 @@
 import Image from "next/image";
-import {metadata as service} from "@/app/layout";
-import {CiGlobe, CiSearch} from "react-icons/ci";
-import {VscGraph, VscSymbolColor} from "react-icons/vsc";
-import {IoShareSocialOutline} from "react-icons/io5";
-import {RiAdvertisementFill} from "react-icons/ri";
+import { CiGlobe, CiSearch } from "react-icons/ci";
+import { VscGraph, VscSymbolColor } from "react-icons/vsc";
+import { IoShareSocialOutline } from "react-icons/io5";
+import { RiAdvertisementFill } from "react-icons/ri";
 
 const OurServicesSection = () => {
     const servicesData = [{
-        icon: <CiSearch/>,
+        icon: <CiSearch />,
         title: "SEO Optimization",
-        description: "Boost your search rankings with our advanced SEO" + " strategies. We optimize every aspect of your online" + " presence for maximum visibility."
+        description: "Boost your search rankings with our advanced SEO strategies. We optimize every aspect of your online presence for maximum visibility."
     }, {
-        icon: <VscSymbolColor/>,
+        icon: <VscSymbolColor />,
         title: "Brand Design",
-        description: "Create a memorable brand identity that resonates with" +
-            " your audience. From logos to complete visual systems, we bring" +
-            " your vision to the life."
+        description: "Create a memorable brand identity that resonates with your audience. From logos to complete visual systems, we bring your vision to life."
     }, {
-        icon: <IoShareSocialOutline/>,
-        title: "Social media",
+        icon: <IoShareSocialOutline />,
+        title: "Social Media",
         description: "Engage your audience across all social platforms with compelling content and strategic campaigns that drive real results."
     }, {
-        icon: <RiAdvertisementFill/>,
+        icon: <RiAdvertisementFill />,
         title: "Paid Advertising",
-        description: "Maximize your ROl with targeted advertising campaigns" +
-            " across Google, Facebook, and other premium platforms."
+        description: "Maximize your ROI with targeted advertising campaigns across Google, Facebook, and other premium platforms."
     }, {
-        icon: <CiGlobe/>,
+        icon: <CiGlobe />,
         title: "Web Development",
-        description: "Build stunning, high-performance websites that convert" +
-            " visitors into customers. Modern design meets powerful functionality."
+        description: "Build stunning, high-performance websites that convert visitors into customers. Modern design meets powerful functionality."
     }, {
-        icon: <VscGraph/>,
+        icon: <VscGraph />,
         title: "Analytics & Insights",
-        description: "Make data-driven decisions with comprehensive" +
-            " analytics and reporting. Track performance and optimize for continuous growth."
-    }]
-    return (<div className="bg-gray-50 py-20">
-        <div className="text-center">
-            <h1 className="text-5xl font-bold">
-                Our <span className="animate-gradient">Services</span>
-            </h1>
-            <div className="w-24 h-1 animate-border mx-auto my-4"></div>
-            <p className="text-xl my-4">
-                Comprehensive digital marketing solutions designed to
-                elevate your brand <br/> and drive meaningful engagement
-                with your audience.
-            </p>
-        </div>
+        description: "Make data-driven decisions with comprehensive analytics and reporting. Track performance and optimize for continuous growth."
+    }];
 
-        <div className="grid grid-cols-3 gap-20 mt-16 px-42">
-            {servicesData.map((service, index) => (
-                <div className="space-y-4" key={index}>
+    return (
+        <div className="bg-gray-50 py-12 md:py-20">
+            <div className="text-center px-4 sm:px-6 lg:px-8">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+                    Our <span className="animate-gradient">Services</span>
+                </h1>
+                <div className="w-24 h-1 animate-border mx-auto my-4"></div>
+                <p className="text-base sm:text-lg lg:text-xl my-4 max-w-4xl mx-auto">
+                    Comprehensive digital marketing solutions designed to
+                    elevate your brand and drive meaningful engagement{" "}
+                    <span className="hidden lg:inline">
+                        <br />
+                    </span>
+                    with your audience.
+                </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 xl:gap-20 mt-8 sm:mt-12 lg:mt-16 px-4 sm:px-6 lg:px-8 xl:px-16">
+                {servicesData.map((service, index) => (
                     <div
-                        className="h-12 w-12 rounded-xl animate-gradient-background text-white text-2xl px-3 py-3 ">{service.icon}</div>
-                    <h1 className="text-2xl font-bold">{service.title}</h1>
-                    <p className="tracking-wider">
-                        {service.description}
-                    </p>
-                </div>))}
+                        className="space-y-3 sm:space-y-4 p-4 sm:p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                        key={index}
+                    >
+                        <div className="h-10 w-10 p-2 md:p-3 sm:h-12 sm:w-12 rounded-xl animate-gradient-background text-white text-xl sm:text-2xl flex items-center justify-center">
+                            {service.icon}
+                        </div>
+                        <h1 className="text-xl sm:text-2xl font-bold text-gray-800">
+                            {service.title}
+                        </h1>
+                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                            {service.description}
+                        </p>
+                    </div>
+                ))}
+            </div>
         </div>
-    </div>);
+    );
 };
 
 export default OurServicesSection;

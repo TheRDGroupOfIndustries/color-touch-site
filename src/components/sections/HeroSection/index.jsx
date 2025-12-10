@@ -3,8 +3,6 @@ import { Button } from "@/components/ui/button";
 
 export const HeroSection = () => {
     return (
-        // 1. Removed 'justify-center' so content isn't forced to the middle
-        // 2. Kept 'min-h-screen' to ensure full background coverage
         <div className="relative min-h-screen flex flex-col" id="home">
             
             {/* Background Image */}
@@ -17,9 +15,7 @@ export const HeroSection = () => {
             />
 
             {/* Content */}
-            {/* 3. Added 'pt-32' (padding-top) to push content down from the very top, 
-                   but higher than the vertical center. Adjust 'pt-32' to 'pt-20' to go higher 
-                   or 'pt-40' to go lower. */}
+
             <div className="relative z-10 w-full pt-18 ">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-40">
                     <div className="w-full lg:w-[60%] space-y-5 sm:space-y-8 lg:space-y-8">

@@ -51,9 +51,9 @@ const OurServicesSection = () => {
         className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
         key={index}
     >
-        {/* Icon Container - Updated for Perfect Centering */}
+        
         <div className="h-14 w-14 rounded-2xl animate-gradient-background flex items-center justify-center shadow-md mb-6 pt-[13px]">
-            {/* We wrap the icon in a span or div to control its size explicitly if needed */}
+            
             <span className="text-white text-3xl flex items-center justify-center">
                 {service.icon}
             </span>

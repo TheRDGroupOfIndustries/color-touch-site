@@ -39,8 +39,7 @@ const OurPortfolioSection = () => {
                                 height={250}
                                 className="w-full h-48 sm:h-56 md:h-64 lg:h-52 xl:h-60 object-cover transition-transform duration-500 group-hover:scale-110"
                             />
-                            {/* Optional: Overlay on hover */}
-                          
+                           
                         </div>
                     ))}
                 </div>

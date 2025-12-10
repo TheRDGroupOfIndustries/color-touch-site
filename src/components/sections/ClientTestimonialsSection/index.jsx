@@ -36,7 +36,7 @@ const testimonials = [
     },
 ];
 
-// ⭐ Star rating component
+// Star rating component
 const StarRating = ({ rating }) => (
     <div className="flex justify-center mb-4">
         {[...Array(5)].map((_, i) => (

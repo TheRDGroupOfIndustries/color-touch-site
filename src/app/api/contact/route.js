@@ -9,18 +9,18 @@ export async function POST(request) {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
-      secure: false, // true for 465, false for other ports
+      secure: false,
       auth: {
-        user: process.env.SMTP_USER, // This must be the string 'apikey'
-        pass: process.env.SMTP_PASS, // Your SendGrid API Key
+        user: process.env.SMTP_USER, 
+        pass: process.env.SMTP_PASS, 
       },
     });
 
     // 2. Define Email Options
     const mailOptions = {
-      from: process.env.EMAIL_FROM, // Must be a verified sender in SendGrid
-      to: process.env.EMAIL_TO,     // Where you want to receive the email
-      replyTo: email,               // Allows you to reply directly to the user
+      from: process.env.EMAIL_FROM, 
+      to: process.env.EMAIL_TO,     
+      replyTo: email,              
       subject: `New Contact from ${firstName} ${lastName}`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">

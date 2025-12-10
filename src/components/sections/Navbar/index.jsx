@@ -9,7 +9,7 @@ const Navbar = () => {
     const dropdownRef = useRef(null);
     const mobileMenuRef = useRef(null);
 
-    // Close dropdown when clicking outside
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             // Close dropdown if click is outside
@@ -59,7 +59,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Navigation */}
-                {/* Desktop Navigation */}
+              
 <ul className="hidden md:flex items-center space-x-8">
     {['Home', 'About'].map((item) => (
         <li key={item}>
@@ -84,7 +84,7 @@ const Navbar = () => {
             <FaAngleDown className={`ml-1 text-sm transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
             
             {/* Gradient Underline for Services */}
-            <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute left-0 bottom-0 w-0 h-0.5 animate-gradient-background transition-all duration-300 group-hover:w-full"></span>
         </button>
 
         {isOpen && (
